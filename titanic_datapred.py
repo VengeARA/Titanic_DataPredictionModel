@@ -7,6 +7,9 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
+st.set_page_config(page_title="Titanic Dataset Analysis", page_icon="🚢", layout="centered")
+
+
 st.title("Titanic Dataset Interactive Analysis & Prediction")
 
 # --- Load data (cached) ---
@@ -14,8 +17,9 @@ st.title("Titanic Dataset Interactive Analysis & Prediction")
 def load_data(filename):
     return pd.read_csv(filename)
 
-train_df = load_data("Train.csv")
-test_df = load_data("Test.csv")
+train_df = load_data("/Users/sid/Desktop/Kaggle_Competitions/Titanic/Train.csv")
+test_df = load_data("/Users/sid/Desktop/Kaggle_Competitions/Titanic/Test.csv")
+
 
 # --- EDA (unchanged) ---
 st.header("Exploratory Data Analysis (EDA)")
@@ -205,4 +209,8 @@ except Exception:
     pass
 
 # End of script
+# %%
+import os
+print(os.getcwd())
+
 # %%
